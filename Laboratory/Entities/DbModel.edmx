@@ -1,0 +1,927 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Хранилище user79_dbModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Appointment">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ClientId" Type="int" Nullable="false" />
+          <Property Name="DoctorScheduleId" Type="int" Nullable="false" />
+          <Property Name="StartTime" Type="time" Precision="7" Nullable="false" />
+          <Property Name="EndTime" Type="time" Precision="7" Nullable="false" />
+        </EntityType>
+        <EntityType Name="s5_Admin">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Login" Type="varchar" MaxLength="50" />
+          <Property Name="Password" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="s5_Analizator">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="DatePostyplenia" Type="datetime" />
+        </EntityType>
+        <EntityType Name="s5_Byxgalter">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Login" Type="varchar" MaxLength="50" />
+          <Property Name="Password" Type="varchar" MaxLength="50" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+          <Property Name="Sername" Type="varchar" MaxLength="50" />
+          <Property Name="Patronomic" Type="varchar" MaxLength="50" />
+          <Property Name="LastDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="s5_InsuranceCompany">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+          <Property Name="INN" Type="varchar" MaxLength="50" />
+          <Property Name="RC" Type="varchar" MaxLength="50" />
+          <Property Name="BIK" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="s5_Laborant">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Login" Type="varchar" MaxLength="50" />
+          <Property Name="Password" Type="varchar" MaxLength="50" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+          <Property Name="Sername" Type="varchar" MaxLength="50" />
+          <Property Name="Patronomic" Type="varchar" MaxLength="50" />
+          <Property Name="LastDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="s5_LaborantYslugi">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CodLaborant" Type="int" />
+          <Property Name="CodYslugi" Type="int" />
+        </EntityType>
+        <EntityType Name="s5_Pacient">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Login" Type="varchar" MaxLength="50" />
+          <Property Name="Password" Type="varchar" MaxLength="50" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+          <Property Name="Sername" Type="varchar" MaxLength="50" />
+          <Property Name="Patronomic" Type="varchar" MaxLength="50" />
+          <Property Name="Ip" Type="varchar" MaxLength="50" />
+          <Property Name="DateOfBirthday" Type="date" />
+          <Property Name="SeriaPassport" Type="int" />
+          <Property Name="NumberPasport" Type="int" />
+          <Property Name="Phone" Type="varchar" MaxLength="50" />
+          <Property Name="Pochta" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="s5_PacientInsuranse">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CodPacient" Type="int" />
+          <Property Name="CodInsuranceCompany" Type="int" />
+          <Property Name="TypePolic" Type="varchar" MaxLength="50" />
+          <Property Name="NumberPolic" Type="int" />
+        </EntityType>
+        <EntityType Name="s5_ServiceRendered">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CodYslugi" Type="int" />
+          <Property Name="Date" Type="datetime" />
+          <Property Name="CodLaborant" Type="int" />
+          <Property Name="CodAnalizator" Type="int" />
+        </EntityType>
+        <EntityType Name="s5_Stcet">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Cod_Zakaz" Type="int" />
+          <Property Name="CodByxgalter" Type="int" />
+        </EntityType>
+        <EntityType Name="s5_YslugiLaboratorii">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+          <Property Name="Prise" Type="float" />
+          <Property Name="CodYslugi" Type="int" />
+          <Property Name="Time" Type="int" />
+          <Property Name="AverageDeviation" Type="int" />
+        </EntityType>
+        <EntityType Name="s5_Zakaz">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Date" Type="date" />
+          <Property Name="TimeZakaz" Type="int" />
+          <Property Name="StatysZakaz" Type="varchar" MaxLength="50" />
+          <Property Name="CodPacient" Type="int" />
+          <Property Name="TotalSum" Type="float" />
+        </EntityType>
+        <EntityType Name="s5_ZakazYsluga">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CodZakaz" Type="int" />
+          <Property Name="CodYslugi" Type="int" />
+          <Property Name="StatysYslugi" Type="varchar" MaxLength="50" />
+          <Property Name="CodLaborant" Type="int" />
+        </EntityType>
+        <Association Name="FK_s5_LaborantYslugi_s5_Laborant">
+          <End Role="s5_Laborant" Type="Self.s5_Laborant" Multiplicity="0..1" />
+          <End Role="s5_LaborantYslugi" Type="Self.s5_LaborantYslugi" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="s5_Laborant">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="s5_LaborantYslugi">
+              <PropertyRef Name="CodLaborant" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_s5_LaborantYslugi_s5_YslugiLaboratorii">
+          <End Role="s5_YslugiLaboratorii" Type="Self.s5_YslugiLaboratorii" Multiplicity="0..1" />
+          <End Role="s5_LaborantYslugi" Type="Self.s5_LaborantYslugi" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="s5_YslugiLaboratorii">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="s5_LaborantYslugi">
+              <PropertyRef Name="CodYslugi" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_s5_PacientInsuranse_s5_InsuranceCompany">
+          <End Role="s5_InsuranceCompany" Type="Self.s5_InsuranceCompany" Multiplicity="0..1" />
+          <End Role="s5_PacientInsuranse" Type="Self.s5_PacientInsuranse" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="s5_InsuranceCompany">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="s5_PacientInsuranse">
+              <PropertyRef Name="CodInsuranceCompany" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_s5_PacientInsuranse_s5_Pacient">
+          <End Role="s5_Pacient" Type="Self.s5_Pacient" Multiplicity="0..1" />
+          <End Role="s5_PacientInsuranse" Type="Self.s5_PacientInsuranse" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="s5_Pacient">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="s5_PacientInsuranse">
+              <PropertyRef Name="CodPacient" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_s5_ServiceRendered_s5_Analizator">
+          <End Role="s5_Analizator" Type="Self.s5_Analizator" Multiplicity="0..1" />
+          <End Role="s5_ServiceRendered" Type="Self.s5_ServiceRendered" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="s5_Analizator">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="s5_ServiceRendered">
+              <PropertyRef Name="CodAnalizator" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_s5_ServiceRendered_s5_Laborant">
+          <End Role="s5_Laborant" Type="Self.s5_Laborant" Multiplicity="0..1" />
+          <End Role="s5_ServiceRendered" Type="Self.s5_ServiceRendered" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="s5_Laborant">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="s5_ServiceRendered">
+              <PropertyRef Name="CodLaborant" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_s5_Stcet_s5_Byxgalter">
+          <End Role="s5_Byxgalter" Type="Self.s5_Byxgalter" Multiplicity="0..1" />
+          <End Role="s5_Stcet" Type="Self.s5_Stcet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="s5_Byxgalter">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="s5_Stcet">
+              <PropertyRef Name="CodByxgalter" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_s5_Stcet_s5_Zakaz">
+          <End Role="s5_Zakaz" Type="Self.s5_Zakaz" Multiplicity="0..1" />
+          <End Role="s5_Stcet" Type="Self.s5_Stcet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="s5_Zakaz">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="s5_Stcet">
+              <PropertyRef Name="Cod_Zakaz" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_s5_Zakaz_s5_Pacient">
+          <End Role="s5_Pacient" Type="Self.s5_Pacient" Multiplicity="0..1" />
+          <End Role="s5_Zakaz" Type="Self.s5_Zakaz" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="s5_Pacient">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="s5_Zakaz">
+              <PropertyRef Name="CodPacient" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_s5_ZakazYsluga_s5_Laborant">
+          <End Role="s5_Laborant" Type="Self.s5_Laborant" Multiplicity="0..1" />
+          <End Role="s5_ZakazYsluga" Type="Self.s5_ZakazYsluga" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="s5_Laborant">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="s5_ZakazYsluga">
+              <PropertyRef Name="CodLaborant" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_s5_ZakazYsluga_s5_YslugiLaboratorii">
+          <End Role="s5_YslugiLaboratorii" Type="Self.s5_YslugiLaboratorii" Multiplicity="0..1" />
+          <End Role="s5_ZakazYsluga" Type="Self.s5_ZakazYsluga" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="s5_YslugiLaboratorii">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="s5_ZakazYsluga">
+              <PropertyRef Name="CodYslugi" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_s5_ZakazYsluga_s5_Zakaz">
+          <End Role="s5_Zakaz" Type="Self.s5_Zakaz" Multiplicity="0..1" />
+          <End Role="s5_ZakazYsluga" Type="Self.s5_ZakazYsluga" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="s5_Zakaz">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="s5_ZakazYsluga">
+              <PropertyRef Name="CodZakaz" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Хранилище user79_dbModelContainer">
+          <EntitySet Name="Appointment" EntityType="Self.Appointment" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="s5_Admin" EntityType="Self.s5_Admin" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="s5_Analizator" EntityType="Self.s5_Analizator" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="s5_Byxgalter" EntityType="Self.s5_Byxgalter" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="s5_InsuranceCompany" EntityType="Self.s5_InsuranceCompany" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="s5_Laborant" EntityType="Self.s5_Laborant" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="s5_LaborantYslugi" EntityType="Self.s5_LaborantYslugi" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="s5_Pacient" EntityType="Self.s5_Pacient" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="s5_PacientInsuranse" EntityType="Self.s5_PacientInsuranse" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="s5_ServiceRendered" EntityType="Self.s5_ServiceRendered" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="s5_Stcet" EntityType="Self.s5_Stcet" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="s5_YslugiLaboratorii" EntityType="Self.s5_YslugiLaboratorii" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="s5_Zakaz" EntityType="Self.s5_Zakaz" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="s5_ZakazYsluga" EntityType="Self.s5_ZakazYsluga" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_s5_LaborantYslugi_s5_Laborant" Association="Self.FK_s5_LaborantYslugi_s5_Laborant">
+            <End Role="s5_Laborant" EntitySet="s5_Laborant" />
+            <End Role="s5_LaborantYslugi" EntitySet="s5_LaborantYslugi" />
+          </AssociationSet>
+          <AssociationSet Name="FK_s5_LaborantYslugi_s5_YslugiLaboratorii" Association="Self.FK_s5_LaborantYslugi_s5_YslugiLaboratorii">
+            <End Role="s5_YslugiLaboratorii" EntitySet="s5_YslugiLaboratorii" />
+            <End Role="s5_LaborantYslugi" EntitySet="s5_LaborantYslugi" />
+          </AssociationSet>
+          <AssociationSet Name="FK_s5_PacientInsuranse_s5_InsuranceCompany" Association="Self.FK_s5_PacientInsuranse_s5_InsuranceCompany">
+            <End Role="s5_InsuranceCompany" EntitySet="s5_InsuranceCompany" />
+            <End Role="s5_PacientInsuranse" EntitySet="s5_PacientInsuranse" />
+          </AssociationSet>
+          <AssociationSet Name="FK_s5_PacientInsuranse_s5_Pacient" Association="Self.FK_s5_PacientInsuranse_s5_Pacient">
+            <End Role="s5_Pacient" EntitySet="s5_Pacient" />
+            <End Role="s5_PacientInsuranse" EntitySet="s5_PacientInsuranse" />
+          </AssociationSet>
+          <AssociationSet Name="FK_s5_ServiceRendered_s5_Analizator" Association="Self.FK_s5_ServiceRendered_s5_Analizator">
+            <End Role="s5_Analizator" EntitySet="s5_Analizator" />
+            <End Role="s5_ServiceRendered" EntitySet="s5_ServiceRendered" />
+          </AssociationSet>
+          <AssociationSet Name="FK_s5_ServiceRendered_s5_Laborant" Association="Self.FK_s5_ServiceRendered_s5_Laborant">
+            <End Role="s5_Laborant" EntitySet="s5_Laborant" />
+            <End Role="s5_ServiceRendered" EntitySet="s5_ServiceRendered" />
+          </AssociationSet>
+          <AssociationSet Name="FK_s5_Stcet_s5_Byxgalter" Association="Self.FK_s5_Stcet_s5_Byxgalter">
+            <End Role="s5_Byxgalter" EntitySet="s5_Byxgalter" />
+            <End Role="s5_Stcet" EntitySet="s5_Stcet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_s5_Stcet_s5_Zakaz" Association="Self.FK_s5_Stcet_s5_Zakaz">
+            <End Role="s5_Zakaz" EntitySet="s5_Zakaz" />
+            <End Role="s5_Stcet" EntitySet="s5_Stcet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_s5_Zakaz_s5_Pacient" Association="Self.FK_s5_Zakaz_s5_Pacient">
+            <End Role="s5_Pacient" EntitySet="s5_Pacient" />
+            <End Role="s5_Zakaz" EntitySet="s5_Zakaz" />
+          </AssociationSet>
+          <AssociationSet Name="FK_s5_ZakazYsluga_s5_Laborant" Association="Self.FK_s5_ZakazYsluga_s5_Laborant">
+            <End Role="s5_Laborant" EntitySet="s5_Laborant" />
+            <End Role="s5_ZakazYsluga" EntitySet="s5_ZakazYsluga" />
+          </AssociationSet>
+          <AssociationSet Name="FK_s5_ZakazYsluga_s5_YslugiLaboratorii" Association="Self.FK_s5_ZakazYsluga_s5_YslugiLaboratorii">
+            <End Role="s5_YslugiLaboratorii" EntitySet="s5_YslugiLaboratorii" />
+            <End Role="s5_ZakazYsluga" EntitySet="s5_ZakazYsluga" />
+          </AssociationSet>
+          <AssociationSet Name="FK_s5_ZakazYsluga_s5_Zakaz" Association="Self.FK_s5_ZakazYsluga_s5_Zakaz">
+            <End Role="s5_Zakaz" EntitySet="s5_Zakaz" />
+            <End Role="s5_ZakazYsluga" EntitySet="s5_ZakazYsluga" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="user79_dbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Admin">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Login" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Analizator">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DatePostyplenia" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="s5_ServiceRendered" Relationship="Self.FK_s5_ServiceRendered_s5_Analizator" FromRole="s5_Analizator" ToRole="s5_ServiceRendered" />
+        </EntityType>
+        <EntityType Name="Byxgalter">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Login" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Sername" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Patronomic" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LastDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="s5_Stcet" Relationship="Self.FK_s5_Stcet_s5_Byxgalter" FromRole="s5_Byxgalter" ToRole="s5_Stcet" />
+        </EntityType>
+        <EntityType Name="InsuranceCompany">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="INN" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="RC" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="BIK" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="s5_PacientInsuranse" Relationship="Self.FK_s5_PacientInsuranse_s5_InsuranceCompany" FromRole="s5_InsuranceCompany" ToRole="s5_PacientInsuranse" />
+        </EntityType>
+        <EntityType Name="Laborant">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Login" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Sername" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Patronomic" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LastDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="s5_LaborantYslugi" Relationship="Self.FK_s5_LaborantYslugi_s5_Laborant" FromRole="s5_Laborant" ToRole="s5_LaborantYslugi" />
+          <NavigationProperty Name="s5_ServiceRendered" Relationship="Self.FK_s5_ServiceRendered_s5_Laborant" FromRole="s5_Laborant" ToRole="s5_ServiceRendered" />
+          <NavigationProperty Name="s5_ZakazYsluga" Relationship="Self.FK_s5_ZakazYsluga_s5_Laborant" FromRole="s5_Laborant" ToRole="s5_ZakazYsluga" />
+        </EntityType>
+        <EntityType Name="LaborantYslugi">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CodLaborant" Type="Int32" />
+          <Property Name="CodYslugi" Type="Int32" />
+          <NavigationProperty Name="s5_Laborant" Relationship="Self.FK_s5_LaborantYslugi_s5_Laborant" FromRole="s5_LaborantYslugi" ToRole="s5_Laborant" />
+          <NavigationProperty Name="s5_YslugiLaboratorii" Relationship="Self.FK_s5_LaborantYslugi_s5_YslugiLaboratorii" FromRole="s5_LaborantYslugi" ToRole="s5_YslugiLaboratorii" />
+        </EntityType>
+        <EntityType Name="Pacient">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Login" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Sername" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Patronomic" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Ip" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DateOfBirthday" Type="DateTime" Precision="0" />
+          <Property Name="SeriaPassport" Type="Int32" />
+          <Property Name="NumberPasport" Type="Int32" />
+          <Property Name="Phone" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Pochta" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="s5_PacientInsuranse" Relationship="Self.FK_s5_PacientInsuranse_s5_Pacient" FromRole="s5_Pacient" ToRole="s5_PacientInsuranse" />
+          <NavigationProperty Name="s5_Zakaz" Relationship="Self.FK_s5_Zakaz_s5_Pacient" FromRole="s5_Pacient" ToRole="s5_Zakaz" />
+        </EntityType>
+        <EntityType Name="PacientInsuranse">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CodPacient" Type="Int32" />
+          <Property Name="CodInsuranceCompany" Type="Int32" />
+          <Property Name="TypePolic" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="NumberPolic" Type="Int32" />
+          <NavigationProperty Name="s5_InsuranceCompany" Relationship="Self.FK_s5_PacientInsuranse_s5_InsuranceCompany" FromRole="s5_PacientInsuranse" ToRole="s5_InsuranceCompany" />
+          <NavigationProperty Name="s5_Pacient" Relationship="Self.FK_s5_PacientInsuranse_s5_Pacient" FromRole="s5_PacientInsuranse" ToRole="s5_Pacient" />
+        </EntityType>
+        <EntityType Name="ServiceRendered">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CodYslugi" Type="Int32" />
+          <Property Name="Date" Type="DateTime" Precision="3" />
+          <Property Name="CodLaborant" Type="Int32" />
+          <Property Name="CodAnalizator" Type="Int32" />
+          <NavigationProperty Name="s5_Analizator" Relationship="Self.FK_s5_ServiceRendered_s5_Analizator" FromRole="s5_ServiceRendered" ToRole="s5_Analizator" />
+          <NavigationProperty Name="s5_Laborant" Relationship="Self.FK_s5_ServiceRendered_s5_Laborant" FromRole="s5_ServiceRendered" ToRole="s5_Laborant" />
+        </EntityType>
+        <EntityType Name="Stcet">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Cod_Zakaz" Type="Int32" />
+          <Property Name="CodByxgalter" Type="Int32" />
+          <NavigationProperty Name="s5_Byxgalter" Relationship="Self.FK_s5_Stcet_s5_Byxgalter" FromRole="s5_Stcet" ToRole="s5_Byxgalter" />
+          <NavigationProperty Name="s5_Zakaz" Relationship="Self.FK_s5_Stcet_s5_Zakaz" FromRole="s5_Stcet" ToRole="s5_Zakaz" />
+        </EntityType>
+        <EntityType Name="YslugiLaboratorii">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Prise" Type="Double" />
+          <Property Name="CodYslugi" Type="Int32" />
+          <Property Name="Time" Type="Int32" />
+          <Property Name="AverageDeviation" Type="Int32" />
+          <NavigationProperty Name="s5_LaborantYslugi" Relationship="Self.FK_s5_LaborantYslugi_s5_YslugiLaboratorii" FromRole="s5_YslugiLaboratorii" ToRole="s5_LaborantYslugi" />
+          <NavigationProperty Name="s5_ZakazYsluga" Relationship="Self.FK_s5_ZakazYsluga_s5_YslugiLaboratorii" FromRole="s5_YslugiLaboratorii" ToRole="s5_ZakazYsluga" />
+        </EntityType>
+        <EntityType Name="Zakaz">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Date" Type="DateTime" Precision="0" />
+          <Property Name="TimeZakaz" Type="Int32" />
+          <Property Name="StatysZakaz" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CodPacient" Type="Int32" />
+          <Property Name="TotalSum" Type="Double" />
+          <NavigationProperty Name="s5_Pacient" Relationship="Self.FK_s5_Zakaz_s5_Pacient" FromRole="s5_Zakaz" ToRole="s5_Pacient" />
+          <NavigationProperty Name="s5_Stcet" Relationship="Self.FK_s5_Stcet_s5_Zakaz" FromRole="s5_Zakaz" ToRole="s5_Stcet" />
+          <NavigationProperty Name="s5_ZakazYsluga" Relationship="Self.FK_s5_ZakazYsluga_s5_Zakaz" FromRole="s5_Zakaz" ToRole="s5_ZakazYsluga" />
+        </EntityType>
+        <EntityType Name="ZakazYsluga">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CodZakaz" Type="Int32" />
+          <Property Name="CodYslugi" Type="Int32" />
+          <Property Name="StatysYslugi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CodLaborant" Type="Int32" />
+          <NavigationProperty Name="s5_Laborant" Relationship="Self.FK_s5_ZakazYsluga_s5_Laborant" FromRole="s5_ZakazYsluga" ToRole="s5_Laborant" />
+          <NavigationProperty Name="s5_YslugiLaboratorii" Relationship="Self.FK_s5_ZakazYsluga_s5_YslugiLaboratorii" FromRole="s5_ZakazYsluga" ToRole="s5_YslugiLaboratorii" />
+          <NavigationProperty Name="s5_Zakaz" Relationship="Self.FK_s5_ZakazYsluga_s5_Zakaz" FromRole="s5_ZakazYsluga" ToRole="s5_Zakaz" />
+        </EntityType>
+        <Association Name="FK_s5_ServiceRendered_s5_Analizator">
+          <End Role="s5_Analizator" Type="user79_dbModel.Analizator" Multiplicity="0..1" />
+          <End Role="s5_ServiceRendered" Type="user79_dbModel.ServiceRendered" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="s5_Analizator">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="s5_ServiceRendered">
+              <PropertyRef Name="CodAnalizator" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_s5_Stcet_s5_Byxgalter">
+          <End Role="s5_Byxgalter" Type="user79_dbModel.Byxgalter" Multiplicity="0..1" />
+          <End Role="s5_Stcet" Type="user79_dbModel.Stcet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="s5_Byxgalter">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="s5_Stcet">
+              <PropertyRef Name="CodByxgalter" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_s5_PacientInsuranse_s5_InsuranceCompany">
+          <End Role="s5_InsuranceCompany" Type="user79_dbModel.InsuranceCompany" Multiplicity="0..1" />
+          <End Role="s5_PacientInsuranse" Type="user79_dbModel.PacientInsuranse" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="s5_InsuranceCompany">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="s5_PacientInsuranse">
+              <PropertyRef Name="CodInsuranceCompany" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_s5_LaborantYslugi_s5_Laborant">
+          <End Role="s5_Laborant" Type="user79_dbModel.Laborant" Multiplicity="0..1" />
+          <End Role="s5_LaborantYslugi" Type="user79_dbModel.LaborantYslugi" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="s5_Laborant">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="s5_LaborantYslugi">
+              <PropertyRef Name="CodLaborant" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_s5_ServiceRendered_s5_Laborant">
+          <End Role="s5_Laborant" Type="user79_dbModel.Laborant" Multiplicity="0..1" />
+          <End Role="s5_ServiceRendered" Type="user79_dbModel.ServiceRendered" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="s5_Laborant">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="s5_ServiceRendered">
+              <PropertyRef Name="CodLaborant" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_s5_ZakazYsluga_s5_Laborant">
+          <End Role="s5_Laborant" Type="user79_dbModel.Laborant" Multiplicity="0..1" />
+          <End Role="s5_ZakazYsluga" Type="user79_dbModel.ZakazYsluga" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="s5_Laborant">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="s5_ZakazYsluga">
+              <PropertyRef Name="CodLaborant" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_s5_LaborantYslugi_s5_YslugiLaboratorii">
+          <End Role="s5_YslugiLaboratorii" Type="user79_dbModel.YslugiLaboratorii" Multiplicity="0..1" />
+          <End Role="s5_LaborantYslugi" Type="user79_dbModel.LaborantYslugi" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="s5_YslugiLaboratorii">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="s5_LaborantYslugi">
+              <PropertyRef Name="CodYslugi" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_s5_PacientInsuranse_s5_Pacient">
+          <End Role="s5_Pacient" Type="user79_dbModel.Pacient" Multiplicity="0..1" />
+          <End Role="s5_PacientInsuranse" Type="user79_dbModel.PacientInsuranse" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="s5_Pacient">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="s5_PacientInsuranse">
+              <PropertyRef Name="CodPacient" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_s5_Zakaz_s5_Pacient">
+          <End Role="s5_Pacient" Type="user79_dbModel.Pacient" Multiplicity="0..1" />
+          <End Role="s5_Zakaz" Type="user79_dbModel.Zakaz" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="s5_Pacient">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="s5_Zakaz">
+              <PropertyRef Name="CodPacient" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_s5_Stcet_s5_Zakaz">
+          <End Role="s5_Zakaz" Type="user79_dbModel.Zakaz" Multiplicity="0..1" />
+          <End Role="s5_Stcet" Type="user79_dbModel.Stcet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="s5_Zakaz">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="s5_Stcet">
+              <PropertyRef Name="Cod_Zakaz" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_s5_ZakazYsluga_s5_YslugiLaboratorii">
+          <End Role="s5_YslugiLaboratorii" Type="user79_dbModel.YslugiLaboratorii" Multiplicity="0..1" />
+          <End Role="s5_ZakazYsluga" Type="user79_dbModel.ZakazYsluga" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="s5_YslugiLaboratorii">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="s5_ZakazYsluga">
+              <PropertyRef Name="CodYslugi" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_s5_ZakazYsluga_s5_Zakaz">
+          <End Role="s5_Zakaz" Type="user79_dbModel.Zakaz" Multiplicity="0..1" />
+          <End Role="s5_ZakazYsluga" Type="user79_dbModel.ZakazYsluga" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="s5_Zakaz">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="s5_ZakazYsluga">
+              <PropertyRef Name="CodZakaz" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="LaboratoryEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Admin" EntityType="user79_dbModel.Admin" />
+          <EntitySet Name="Analizator" EntityType="user79_dbModel.Analizator" />
+          <EntitySet Name="Byxgalter" EntityType="user79_dbModel.Byxgalter" />
+          <EntitySet Name="InsuranceCompany" EntityType="user79_dbModel.InsuranceCompany" />
+          <EntitySet Name="Laborant" EntityType="user79_dbModel.Laborant" />
+          <EntitySet Name="LaborantYslugi" EntityType="user79_dbModel.LaborantYslugi" />
+          <EntitySet Name="Pacient" EntityType="user79_dbModel.Pacient" />
+          <EntitySet Name="PacientInsuranse" EntityType="user79_dbModel.PacientInsuranse" />
+          <EntitySet Name="ServiceRendered" EntityType="user79_dbModel.ServiceRendered" />
+          <EntitySet Name="Stcet" EntityType="user79_dbModel.Stcet" />
+          <EntitySet Name="YslugiLaboratorii" EntityType="user79_dbModel.YslugiLaboratorii" />
+          <EntitySet Name="Zakaz" EntityType="user79_dbModel.Zakaz" />
+          <EntitySet Name="ZakazYsluga" EntityType="user79_dbModel.ZakazYsluga" />
+          <AssociationSet Name="FK_s5_ServiceRendered_s5_Analizator" Association="Self.FK_s5_ServiceRendered_s5_Analizator">
+            <End Role="s5_Analizator" EntitySet="Analizator" />
+            <End Role="s5_ServiceRendered" EntitySet="ServiceRendered" />
+          </AssociationSet>
+          <AssociationSet Name="FK_s5_Stcet_s5_Byxgalter" Association="Self.FK_s5_Stcet_s5_Byxgalter">
+            <End Role="s5_Byxgalter" EntitySet="Byxgalter" />
+            <End Role="s5_Stcet" EntitySet="Stcet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_s5_PacientInsuranse_s5_InsuranceCompany" Association="Self.FK_s5_PacientInsuranse_s5_InsuranceCompany">
+            <End Role="s5_InsuranceCompany" EntitySet="InsuranceCompany" />
+            <End Role="s5_PacientInsuranse" EntitySet="PacientInsuranse" />
+          </AssociationSet>
+          <AssociationSet Name="FK_s5_LaborantYslugi_s5_Laborant" Association="Self.FK_s5_LaborantYslugi_s5_Laborant">
+            <End Role="s5_Laborant" EntitySet="Laborant" />
+            <End Role="s5_LaborantYslugi" EntitySet="LaborantYslugi" />
+          </AssociationSet>
+          <AssociationSet Name="FK_s5_ServiceRendered_s5_Laborant" Association="Self.FK_s5_ServiceRendered_s5_Laborant">
+            <End Role="s5_Laborant" EntitySet="Laborant" />
+            <End Role="s5_ServiceRendered" EntitySet="ServiceRendered" />
+          </AssociationSet>
+          <AssociationSet Name="FK_s5_ZakazYsluga_s5_Laborant" Association="Self.FK_s5_ZakazYsluga_s5_Laborant">
+            <End Role="s5_Laborant" EntitySet="Laborant" />
+            <End Role="s5_ZakazYsluga" EntitySet="ZakazYsluga" />
+          </AssociationSet>
+          <AssociationSet Name="FK_s5_LaborantYslugi_s5_YslugiLaboratorii" Association="Self.FK_s5_LaborantYslugi_s5_YslugiLaboratorii">
+            <End Role="s5_YslugiLaboratorii" EntitySet="YslugiLaboratorii" />
+            <End Role="s5_LaborantYslugi" EntitySet="LaborantYslugi" />
+          </AssociationSet>
+          <AssociationSet Name="FK_s5_PacientInsuranse_s5_Pacient" Association="Self.FK_s5_PacientInsuranse_s5_Pacient">
+            <End Role="s5_Pacient" EntitySet="Pacient" />
+            <End Role="s5_PacientInsuranse" EntitySet="PacientInsuranse" />
+          </AssociationSet>
+          <AssociationSet Name="FK_s5_Zakaz_s5_Pacient" Association="Self.FK_s5_Zakaz_s5_Pacient">
+            <End Role="s5_Pacient" EntitySet="Pacient" />
+            <End Role="s5_Zakaz" EntitySet="Zakaz" />
+          </AssociationSet>
+          <AssociationSet Name="FK_s5_Stcet_s5_Zakaz" Association="Self.FK_s5_Stcet_s5_Zakaz">
+            <End Role="s5_Zakaz" EntitySet="Zakaz" />
+            <End Role="s5_Stcet" EntitySet="Stcet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_s5_ZakazYsluga_s5_YslugiLaboratorii" Association="Self.FK_s5_ZakazYsluga_s5_YslugiLaboratorii">
+            <End Role="s5_YslugiLaboratorii" EntitySet="YslugiLaboratorii" />
+            <End Role="s5_ZakazYsluga" EntitySet="ZakazYsluga" />
+          </AssociationSet>
+          <AssociationSet Name="FK_s5_ZakazYsluga_s5_Zakaz" Association="Self.FK_s5_ZakazYsluga_s5_Zakaz">
+            <End Role="s5_Zakaz" EntitySet="Zakaz" />
+            <End Role="s5_ZakazYsluga" EntitySet="ZakazYsluga" />
+          </AssociationSet>
+          <EntitySet Name="Appointment" EntityType="user79_dbModel.Appointment" />
+        </EntityContainer>
+        <EntityType Name="Appointment">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ClientId" Type="Int32" Nullable="false" />
+          <Property Name="DoctorScheduleId" Type="Int32" Nullable="false" />
+          <Property Name="StartTime" Type="Time" Nullable="false" Precision="7" />
+          <Property Name="EndTime" Type="Time" Nullable="false" Precision="7" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище user79_dbModelContainer" CdmEntityContainer="LaboratoryEntities">
+          <EntitySetMapping Name="Admin">
+            <EntityTypeMapping TypeName="user79_dbModel.Admin">
+              <MappingFragment StoreEntitySet="s5_Admin">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Login" ColumnName="Login" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Analizator">
+            <EntityTypeMapping TypeName="user79_dbModel.Analizator">
+              <MappingFragment StoreEntitySet="s5_Analizator">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="DatePostyplenia" ColumnName="DatePostyplenia" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Byxgalter">
+            <EntityTypeMapping TypeName="user79_dbModel.Byxgalter">
+              <MappingFragment StoreEntitySet="s5_Byxgalter">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Login" ColumnName="Login" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Sername" ColumnName="Sername" />
+                <ScalarProperty Name="Patronomic" ColumnName="Patronomic" />
+                <ScalarProperty Name="LastDate" ColumnName="LastDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="InsuranceCompany">
+            <EntityTypeMapping TypeName="user79_dbModel.InsuranceCompany">
+              <MappingFragment StoreEntitySet="s5_InsuranceCompany">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="INN" ColumnName="INN" />
+                <ScalarProperty Name="RC" ColumnName="RC" />
+                <ScalarProperty Name="BIK" ColumnName="BIK" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Laborant">
+            <EntityTypeMapping TypeName="user79_dbModel.Laborant">
+              <MappingFragment StoreEntitySet="s5_Laborant">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Login" ColumnName="Login" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Sername" ColumnName="Sername" />
+                <ScalarProperty Name="Patronomic" ColumnName="Patronomic" />
+                <ScalarProperty Name="LastDate" ColumnName="LastDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LaborantYslugi">
+            <EntityTypeMapping TypeName="user79_dbModel.LaborantYslugi">
+              <MappingFragment StoreEntitySet="s5_LaborantYslugi">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="CodLaborant" ColumnName="CodLaborant" />
+                <ScalarProperty Name="CodYslugi" ColumnName="CodYslugi" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Pacient">
+            <EntityTypeMapping TypeName="user79_dbModel.Pacient">
+              <MappingFragment StoreEntitySet="s5_Pacient">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Login" ColumnName="Login" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Sername" ColumnName="Sername" />
+                <ScalarProperty Name="Patronomic" ColumnName="Patronomic" />
+                <ScalarProperty Name="Ip" ColumnName="Ip" />
+                <ScalarProperty Name="DateOfBirthday" ColumnName="DateOfBirthday" />
+                <ScalarProperty Name="SeriaPassport" ColumnName="SeriaPassport" />
+                <ScalarProperty Name="NumberPasport" ColumnName="NumberPasport" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Pochta" ColumnName="Pochta" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PacientInsuranse">
+            <EntityTypeMapping TypeName="user79_dbModel.PacientInsuranse">
+              <MappingFragment StoreEntitySet="s5_PacientInsuranse">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="CodPacient" ColumnName="CodPacient" />
+                <ScalarProperty Name="CodInsuranceCompany" ColumnName="CodInsuranceCompany" />
+                <ScalarProperty Name="TypePolic" ColumnName="TypePolic" />
+                <ScalarProperty Name="NumberPolic" ColumnName="NumberPolic" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ServiceRendered">
+            <EntityTypeMapping TypeName="user79_dbModel.ServiceRendered">
+              <MappingFragment StoreEntitySet="s5_ServiceRendered">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="CodYslugi" ColumnName="CodYslugi" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="CodLaborant" ColumnName="CodLaborant" />
+                <ScalarProperty Name="CodAnalizator" ColumnName="CodAnalizator" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Stcet">
+            <EntityTypeMapping TypeName="user79_dbModel.Stcet">
+              <MappingFragment StoreEntitySet="s5_Stcet">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Cod_Zakaz" ColumnName="Cod_Zakaz" />
+                <ScalarProperty Name="CodByxgalter" ColumnName="CodByxgalter" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="YslugiLaboratorii">
+            <EntityTypeMapping TypeName="user79_dbModel.YslugiLaboratorii">
+              <MappingFragment StoreEntitySet="s5_YslugiLaboratorii">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Prise" ColumnName="Prise" />
+                <ScalarProperty Name="CodYslugi" ColumnName="CodYslugi" />
+                <ScalarProperty Name="Time" ColumnName="Time" />
+                <ScalarProperty Name="AverageDeviation" ColumnName="AverageDeviation" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Zakaz">
+            <EntityTypeMapping TypeName="user79_dbModel.Zakaz">
+              <MappingFragment StoreEntitySet="s5_Zakaz">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="TimeZakaz" ColumnName="TimeZakaz" />
+                <ScalarProperty Name="StatysZakaz" ColumnName="StatysZakaz" />
+                <ScalarProperty Name="CodPacient" ColumnName="CodPacient" />
+                <ScalarProperty Name="TotalSum" ColumnName="TotalSum" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ZakazYsluga">
+            <EntityTypeMapping TypeName="user79_dbModel.ZakazYsluga">
+              <MappingFragment StoreEntitySet="s5_ZakazYsluga">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="CodZakaz" ColumnName="CodZakaz" />
+                <ScalarProperty Name="CodYslugi" ColumnName="CodYslugi" />
+                <ScalarProperty Name="StatysYslugi" ColumnName="StatysYslugi" />
+                <ScalarProperty Name="CodLaborant" ColumnName="CodLaborant" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Appointment">
+            <EntityTypeMapping TypeName="user79_dbModel.Appointment">
+              <MappingFragment StoreEntitySet="Appointment">
+                <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+                <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+                <ScalarProperty Name="DoctorScheduleId" ColumnName="DoctorScheduleId" />
+                <ScalarProperty Name="ClientId" ColumnName="ClientId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

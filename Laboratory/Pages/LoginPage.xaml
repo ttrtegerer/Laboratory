@@ -1,0 +1,45 @@
+﻿<Page x:Class="Laboratory.Pages.LoginPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Laboratory.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="550" d:DesignWidth="900"
+      Title="Авторизация">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="40"></RowDefinition>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="1" Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Width="70" Margin="5">Логин:</TextBlock>
+                <TextBox x:Name="TBoxLogin" Width="120" Height="25" Margin=" 0 0 0 5" ></TextBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Width="70" Margin="5">Пароль:</TextBlock>
+                <PasswordBox x:Name="PBPassword" Width="120" Height="25" Margin="0 0 0 5"  ></PasswordBox>
+                <TextBox x:Name="TBoxPassword" Width="120" Height="25" Margin="0 0 0 5" Visibility="Collapsed"></TextBox>
+               
+            </StackPanel>
+            
+            <CheckBox x:Name="CBPasswordNoActive" Checked="RBPassword_Checked" Margin="5">Показать пароль</CheckBox>
+            <CheckBox x:Name="CBPasswordActive" Checked="CBPasswordActive_Checked" Margin="5">Скрыть пароль</CheckBox>
+            <StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock x:Name="TBlockCaptcha" Width="70" Margin="5" Visibility="Collapsed">Капча:</TextBlock>
+                    <TextBox x:Name="TBoxCaptcha" Width="120"  Visibility="Collapsed" Height="35" TextDecorations="Strikethrough" Margin="0 0 0 5" FontSize="12"></TextBox>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock x:Name="TBlockResaultCaptcha" Width="70" Margin="5" Visibility="Collapsed">Результат:</TextBlock>
+                    <TextBox x:Name="TBoxResaultCaptcha" Width="120" Height="25" Margin="0 0 0 5" Visibility="Collapsed"></TextBox>
+                </StackPanel>
+            <Button x:Name="ReloadCaptcha" Content="Обновить" Width="200" Height="25" Background="#FF488C51" Foreground="White" Click="ReloadCaptcha_Click" Visibility="Collapsed" Margin="10"></Button>
+            </StackPanel>
+            <Button x:Name="Vhod" Content="Войти" Width="200" Height="25" Background="#FF488C51" Foreground="White" Click="Vhod_Click" ></Button>
+        </StackPanel>
+    </Grid>
+</Page>

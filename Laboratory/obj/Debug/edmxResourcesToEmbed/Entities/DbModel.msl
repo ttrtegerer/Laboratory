@@ -1,0 +1,163 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище user79_dbModelContainer" CdmEntityContainer="LaboratoryEntities">
+    <EntitySetMapping Name="Admin">
+      <EntityTypeMapping TypeName="user79_dbModel.Admin">
+        <MappingFragment StoreEntitySet="s5_Admin">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Login" ColumnName="Login" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Analizator">
+      <EntityTypeMapping TypeName="user79_dbModel.Analizator">
+        <MappingFragment StoreEntitySet="s5_Analizator">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="DatePostyplenia" ColumnName="DatePostyplenia" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Byxgalter">
+      <EntityTypeMapping TypeName="user79_dbModel.Byxgalter">
+        <MappingFragment StoreEntitySet="s5_Byxgalter">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Login" ColumnName="Login" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Sername" ColumnName="Sername" />
+          <ScalarProperty Name="Patronomic" ColumnName="Patronomic" />
+          <ScalarProperty Name="LastDate" ColumnName="LastDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="InsuranceCompany">
+      <EntityTypeMapping TypeName="user79_dbModel.InsuranceCompany">
+        <MappingFragment StoreEntitySet="s5_InsuranceCompany">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="INN" ColumnName="INN" />
+          <ScalarProperty Name="RC" ColumnName="RC" />
+          <ScalarProperty Name="BIK" ColumnName="BIK" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Laborant">
+      <EntityTypeMapping TypeName="user79_dbModel.Laborant">
+        <MappingFragment StoreEntitySet="s5_Laborant">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Login" ColumnName="Login" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Sername" ColumnName="Sername" />
+          <ScalarProperty Name="Patronomic" ColumnName="Patronomic" />
+          <ScalarProperty Name="LastDate" ColumnName="LastDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LaborantYslugi">
+      <EntityTypeMapping TypeName="user79_dbModel.LaborantYslugi">
+        <MappingFragment StoreEntitySet="s5_LaborantYslugi">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="CodLaborant" ColumnName="CodLaborant" />
+          <ScalarProperty Name="CodYslugi" ColumnName="CodYslugi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Pacient">
+      <EntityTypeMapping TypeName="user79_dbModel.Pacient">
+        <MappingFragment StoreEntitySet="s5_Pacient">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Login" ColumnName="Login" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Sername" ColumnName="Sername" />
+          <ScalarProperty Name="Patronomic" ColumnName="Patronomic" />
+          <ScalarProperty Name="Ip" ColumnName="Ip" />
+          <ScalarProperty Name="DateOfBirthday" ColumnName="DateOfBirthday" />
+          <ScalarProperty Name="SeriaPassport" ColumnName="SeriaPassport" />
+          <ScalarProperty Name="NumberPasport" ColumnName="NumberPasport" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Pochta" ColumnName="Pochta" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PacientInsuranse">
+      <EntityTypeMapping TypeName="user79_dbModel.PacientInsuranse">
+        <MappingFragment StoreEntitySet="s5_PacientInsuranse">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="CodPacient" ColumnName="CodPacient" />
+          <ScalarProperty Name="CodInsuranceCompany" ColumnName="CodInsuranceCompany" />
+          <ScalarProperty Name="TypePolic" ColumnName="TypePolic" />
+          <ScalarProperty Name="NumberPolic" ColumnName="NumberPolic" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ServiceRendered">
+      <EntityTypeMapping TypeName="user79_dbModel.ServiceRendered">
+        <MappingFragment StoreEntitySet="s5_ServiceRendered">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="CodYslugi" ColumnName="CodYslugi" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="CodLaborant" ColumnName="CodLaborant" />
+          <ScalarProperty Name="CodAnalizator" ColumnName="CodAnalizator" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Stcet">
+      <EntityTypeMapping TypeName="user79_dbModel.Stcet">
+        <MappingFragment StoreEntitySet="s5_Stcet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Cod_Zakaz" ColumnName="Cod_Zakaz" />
+          <ScalarProperty Name="CodByxgalter" ColumnName="CodByxgalter" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="YslugiLaboratorii">
+      <EntityTypeMapping TypeName="user79_dbModel.YslugiLaboratorii">
+        <MappingFragment StoreEntitySet="s5_YslugiLaboratorii">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Prise" ColumnName="Prise" />
+          <ScalarProperty Name="CodYslugi" ColumnName="CodYslugi" />
+          <ScalarProperty Name="Time" ColumnName="Time" />
+          <ScalarProperty Name="AverageDeviation" ColumnName="AverageDeviation" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Zakaz">
+      <EntityTypeMapping TypeName="user79_dbModel.Zakaz">
+        <MappingFragment StoreEntitySet="s5_Zakaz">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="TimeZakaz" ColumnName="TimeZakaz" />
+          <ScalarProperty Name="StatysZakaz" ColumnName="StatysZakaz" />
+          <ScalarProperty Name="CodPacient" ColumnName="CodPacient" />
+          <ScalarProperty Name="TotalSum" ColumnName="TotalSum" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ZakazYsluga">
+      <EntityTypeMapping TypeName="user79_dbModel.ZakazYsluga">
+        <MappingFragment StoreEntitySet="s5_ZakazYsluga">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="CodZakaz" ColumnName="CodZakaz" />
+          <ScalarProperty Name="CodYslugi" ColumnName="CodYslugi" />
+          <ScalarProperty Name="StatysYslugi" ColumnName="StatysYslugi" />
+          <ScalarProperty Name="CodLaborant" ColumnName="CodLaborant" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Appointment">
+      <EntityTypeMapping TypeName="user79_dbModel.Appointment">
+        <MappingFragment StoreEntitySet="Appointment">
+          <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+          <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+          <ScalarProperty Name="DoctorScheduleId" ColumnName="DoctorScheduleId" />
+          <ScalarProperty Name="ClientId" ColumnName="ClientId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

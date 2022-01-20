@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="74f4590109d0445daa329b7c256b9a1c" Name="Diagram1" ZoomLevel="86">
+        <EntityTypeShape EntityType="user79_dbModel.Admin" Width="1.5" PointX="5.75" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="user79_dbModel.Analizator" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="user79_dbModel.Byxgalter" Width="1.5" PointX="0.75" PointY="20.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="user79_dbModel.InsuranceCompany" Width="1.5" PointX="1.5" PointY="24.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="user79_dbModel.Laborant" Width="1.5" PointX="0.75" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="user79_dbModel.LaborantYslugi" Width="1.5" PointX="3" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="user79_dbModel.Pacient" Width="1.5" PointX="1.5" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="user79_dbModel.PacientInsuranse" Width="1.5" PointX="3.75" PointY="16.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="user79_dbModel.ServiceRendered" Width="1.5" PointX="3" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="user79_dbModel.Stcet" Width="1.5" PointX="3" PointY="12.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="user79_dbModel.YslugiLaboratorii" Width="1.5" PointX="0.75" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="user79_dbModel.Zakaz" Width="1.5" PointX="0.75" PointY="12.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="user79_dbModel.ZakazYsluga" Width="1.5" PointX="3" PointY="7.25" IsExpanded="true" />
+        <AssociationConnector Association="user79_dbModel.FK_s5_ServiceRendered_s5_Analizator" ManuallyRouted="false" />
+        <AssociationConnector Association="user79_dbModel.FK_s5_Stcet_s5_Byxgalter" ManuallyRouted="false" />
+        <AssociationConnector Association="user79_dbModel.FK_s5_PacientInsuranse_s5_InsuranceCompany" ManuallyRouted="false" />
+        <AssociationConnector Association="user79_dbModel.FK_s5_LaborantYslugi_s5_Laborant" ManuallyRouted="false" />
+        <AssociationConnector Association="user79_dbModel.FK_s5_ServiceRendered_s5_Laborant" ManuallyRouted="false" />
+        <AssociationConnector Association="user79_dbModel.FK_s5_ZakazYsluga_s5_Laborant" ManuallyRouted="false" />
+        <AssociationConnector Association="user79_dbModel.FK_s5_LaborantYslugi_s5_YslugiLaboratorii" ManuallyRouted="false" />
+        <AssociationConnector Association="user79_dbModel.FK_s5_PacientInsuranse_s5_Pacient" ManuallyRouted="false" />
+        <AssociationConnector Association="user79_dbModel.FK_s5_Zakaz_s5_Pacient" ManuallyRouted="false" />
+        <AssociationConnector Association="user79_dbModel.FK_s5_Stcet_s5_Zakaz" ManuallyRouted="false" />
+        <AssociationConnector Association="user79_dbModel.FK_s5_ZakazYsluga_s5_YslugiLaboratorii" ManuallyRouted="false" />
+        <AssociationConnector Association="user79_dbModel.FK_s5_ZakazYsluga_s5_Zakaz" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="user79_dbModel.Appointment" Width="1.5" PointX="5.375" PointY="3.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
