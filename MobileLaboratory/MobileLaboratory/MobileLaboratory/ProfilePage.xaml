@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MobileLaboratory.ProfilePage">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition Height="40"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0"  BackgroundColor="#FF76E383"></Grid>
+            <Grid Grid.Row="2"  BackgroundColor="#FF76E383"></Grid>
+            <StackLayout Grid.Row="1" HorizontalOptions="Center" VerticalOptions="Center" Orientation="Vertical" >
+                <StackLayout Orientation="Horizontal">
+                    <StackLayout Orientation="Vertical">
+                        <StackLayout Orientation="Horizontal" Margin="5">
+                            <Label Margin="46,0,0,0" MinimumWidthRequest="90">Фамилия:</Label>
+                            <Entry x:Name="TboxSername" WidthRequest="120"></Entry>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal" Margin="5">
+                            <Label Margin="75,0,0,0" MinimumWidthRequest="90">Имя:</Label>
+                            <Entry x:Name="TboxName" WidthRequest="120"></Entry>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal" Margin="5">
+                            <Label Margin="44,0,0,0" MinimumWidthRequest="90">Отчество:</Label>
+                            <Entry x:Name="TboxOtchectvo" WidthRequest="120"></Entry>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal" Margin="5">
+                            <Label Margin="2,0,0,0" MinimumWidthRequest="90">Дата Рождения:</Label>
+                            <Entry x:Name="TboxDayOfBirthday" WidthRequest="120"></Entry>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal" Margin="5">
+                            <Label Margin="5,0,0,0" MinimumWidthRequest="90">Паспорт серия:</Label>
+                            <Entry x:Name="TboxSPassport" WidthRequest="120"></Entry>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal" Margin="5">
+                            <Label MinimumWidthRequest="90">Паспорт номер:</Label>
+                            <Entry x:Name="TboxNPassport" WidthRequest="120"></Entry>
+                        </StackLayout>
+                    </StackLayout>
+                    <StackLayout Orientation="Vertical">
+                        <StackLayout Orientation="Horizontal" Margin="5">
+                            <Label MinimumWidthRequest="90">Страховой полис:</Label>
+                            <Entry x:Name="TboxStraxovaya" WidthRequest="120"></Entry>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal" Margin="5">
+                            <Label Margin="52,0,0,0" MinimumWidthRequest="90">Телефон:</Label>
+                            <Entry x:Name="TboxPhone" WidthRequest="120"></Entry>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal" Margin="5">
+                            <Label Margin="67,0,0,0" MinimumWidthRequest="90">Почта:</Label>
+                            <Entry x:Name="TboxPhocta" WidthRequest="120"></Entry>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal" Margin="5">
+                            <Label Margin="67,0,0,0" MinimumWidthRequest="90">Логин:</Label>
+                            <Entry x:Name="TboxLogin" WidthRequest="120"></Entry>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal" Margin="5">
+                            <Label Margin="59,0,0,0" MinimumWidthRequest="90">Пароль:</Label>
+                            <Entry x:Name="TboxPassword" WidthRequest="120"></Entry>
+                        </StackLayout>
+                    </StackLayout>
+                </StackLayout>
+                <Button x:Name="BtnEdit"  Grid.Row="2" HorizontalOptions="EndAndExpand"  Margin="5" WidthRequest="200" HeightRequest="35" Background="#FF488C51" TextColor="White" Text="Редактировать" Clicked="BtnEdit_Clicked"></Button>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

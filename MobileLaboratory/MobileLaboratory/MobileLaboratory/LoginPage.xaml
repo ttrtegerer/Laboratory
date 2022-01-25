@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MobileLaboratory.LoginPage">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition Height="40"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0"  BackgroundColor="#FF76E383"></Grid>
+            <Grid Grid.Row="2"  BackgroundColor="#FF76E383"></Grid>
+            <StackLayout Grid.Row="1" HorizontalOptions="Center" VerticalOptions="Center" >
+            <Entry x:Name="Login" Placeholder="Логин" WidthRequest="200"></Entry>
+            <Entry x:Name="Password" Placeholder="Пароль" WidthRequest="200"></Entry>
+            <Button x:Name="BtnLogin"  Grid.Row="2" HorizontalOptions="EndAndExpand"  Margin="5" WidthRequest="200" HeightRequest="35" Background="#FF488C51" TextColor="White" Text="Войти" Clicked="BtnLogin_Clicked"></Button>
+            </StackLayout>
+        </Grid>
+        
+    </ContentPage.Content>
+</ContentPage>

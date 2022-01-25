@@ -1,11 +1,13 @@
-﻿
+﻿D:\Laboratory\Laboratory\obj\Debug\GeneratedInternalTypeHelper.g.i.cs
 
 FD:\Laboratory\Laboratory\MainWindow.xaml;;
 FD:\Laboratory\Laboratory\Pages\AddPacient.xaml;;
 FD:\Laboratory\Laboratory\Pages\AdministratorVhod.xaml;;
 FD:\Laboratory\Laboratory\Pages\ByxgalterVhod.xaml;;
+FD:\Laboratory\Laboratory\Pages\EditPacient.xaml;;
 FD:\Laboratory\Laboratory\Pages\LaborantVhod.xaml;;
 FD:\Laboratory\Laboratory\Pages\LoginPage.xaml;;
+FD:\Laboratory\Laboratory\Pages\OtchetPage.xaml;;
 FD:\Laboratory\Laboratory\Pages\PacientVhod.xaml;;
 FD:\Laboratory\Laboratory\Pages\Zakaz.xaml;;
 

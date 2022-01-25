@@ -5,10 +5,18 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Laboratory.Pages"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="550" d:DesignWidth="900"
       Title="AdministratorVhod">
 
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="40"></RowDefinition>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Button x:Name="BtnHistori" Content="История входа" Width="200" Height="25" Background="#FF488C51" Foreground="White" Click="BtnHistori_Click" Margin="5"></Button>
+            <Button x:Name="BtnAddOtchet" Content="Создать отчёт" Width="200" Height="25" Background="#FF488C51" Foreground="White" Click="BtnAddOtchet_Click" Margin="5"></Button>
+        </StackPanel>
     </Grid>
 </Page>

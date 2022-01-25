@@ -9,6 +9,30 @@
       Title="ByxgalterVhod">
 
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="40"></RowDefinition>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1">
+            <StackPanel Orientation="Horizontal" Margin="5" HorizontalAlignment="Center">
+                <TextBlock Margin="5">Выберите страховую компанию:</TextBlock>
+                <ComboBox x:Name="CboxStraxovaya" Width="120" Height="30" DisplayMemberPath="Name"></ComboBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="5" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <TextBlock Margin="5">Выберите период отчёта:</TextBlock>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Margin="5 70 5 5">C:</TextBlock>
+                    <Calendar x:Name="DateStart"></Calendar>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Margin="5 70 5 5">По:</TextBlock>
+                    <Calendar x:Name="DateEnd"></Calendar>
+                </StackPanel>
+            </StackPanel>
+            <Button x:Name="BtnAddOtchet" Content="Сформировать отчёт" Width="200" Height="25" Background="#FF488C51" Foreground="White" Click="BtnAddOtchet_Click" Margin="5"></Button>
+        </StackPanel>
     </Grid>
 </Page>

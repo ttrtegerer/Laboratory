@@ -19,7 +19,8 @@
             <TextBlock x:Name="Timer" Width="120" Height="30" FontFamily="20"> </TextBlock>
         </StackPanel>
         <StackPanel Grid.Row="1" Orientation="Vertical" HorizontalAlignment="Center"  VerticalAlignment="Center" >
-            <Button x:Name="BtnZakaz" Content="Принять биоматериал" Width="200" Height="25" Background="#FF488C51" Foreground="White" Click="BtnZakaz_Click"></Button>
+            <Button x:Name="BtnZakaz" Content="Принять биоматериал" Width="200" Height="25" Background="#FF488C51" Foreground="White" Click="BtnZakaz_Click" Margin="5"></Button>
+            <Button x:Name="EditPacient" Content="Редактировать пациента" Width="200" Height="25" Background="#FF488C51" Foreground="White" Click="EditPacient_Click"></Button>
         </StackPanel>
     </Grid>
 </Page>

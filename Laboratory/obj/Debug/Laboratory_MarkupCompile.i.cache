@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 D:\Laboratory\Laboratory\App.xaml
-8172301744
+101830802347
 2856189909
-30999021833
-21-1482866121
-MainWindow.xaml;Pages\AddPacient.xaml;Pages\AdministratorVhod.xaml;Pages\ByxgalterVhod.xaml;Pages\LaborantVhod.xaml;Pages\LoginPage.xaml;Pages\PacientVhod.xaml;Pages\Zakaz.xaml;
+321262883607
+26-1835612179
+MainWindow.xaml;Pages\AddPacient.xaml;Pages\AdministratorVhod.xaml;Pages\ByxgalterVhod.xaml;Pages\EditPacient.xaml;Pages\LaborantVhod.xaml;Pages\LoginPage.xaml;Pages\OtchetPage.xaml;Pages\PacientVhod.xaml;Pages\Zakaz.xaml;
 
 True
 

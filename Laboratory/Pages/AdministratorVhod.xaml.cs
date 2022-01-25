@@ -24,5 +24,15 @@ namespace Laboratory.Pages
         {
             InitializeComponent();
         }
+
+        private void BtnAddOtchet_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Pages.OtchetPage());
+        }
+
+        private void BtnHistori_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

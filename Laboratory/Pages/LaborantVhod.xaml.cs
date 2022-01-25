@@ -60,6 +60,12 @@ namespace Laboratory.Pages
             int Seconds =Convert.ToInt32(Time.TotalSeconds.ToString());
                 NavigationService.Navigate(new Zakaz(Seconds, CurrentLaborantZakaz));
         }
+
+        private void EditPacient_Click(object sender, RoutedEventArgs e)
+        {
+            int Seconds = Convert.ToInt32(Time.TotalSeconds.ToString());
+            NavigationService.Navigate(new EditPacient(Seconds, CurrentLaborantZakaz));
+        }
     }
 }
 

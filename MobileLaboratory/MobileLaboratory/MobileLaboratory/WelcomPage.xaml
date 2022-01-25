@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MobileLaboratory.WelcomPage">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition Height="50"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Row="0" Grid.ColumnSpan="2" BackgroundColor="#FF76E383"></Grid>
+            <Grid Grid.Row="2" Grid.ColumnSpan="2" BackgroundColor="#FF76E383"></Grid>
+            <StackLayout Grid.Row="0" Grid.Column="0" Orientation="Horizontal" HorizontalOptions="StartAndExpand" VerticalOptions="Center">
+                <Image Margin="5" Source="\Resourse\logo.png"></Image>
+            </StackLayout>
+            <StackLayout Grid.Column="0" Grid.Row="1" Orientation="Vertical" HorizontalOptions="Center" VerticalOptions="Center">
+                <Label HorizontalOptions="Center">Новости</Label>
+                <ListView x:Name="LvNews" ItemsSource="{Binding}" ItemSelected="LvNews_ItemSelected">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <ViewCell.View>
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="*" />
+                                        </Grid.ColumnDefinitions>
+                                        <Label Text="{Binding Title}" FontSize="Medium" Grid.Column="0" />
+                                        <Label Text="{Binding Date}" FontSize="Medium" Grid.Column="1" />
+                                        <Label Text="{Binding Text}" FontSize="Medium" Grid.Column="2" />
+                                    </Grid>
+                                </ViewCell.View>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+            <StackLayout Grid.Column="1" Grid.Row="1" Orientation="Vertical" HorizontalOptions="Center" VerticalOptions="Center">
+                <Label HorizontalOptions="Center">Услуги</Label>
+                <ListView x:Name="LvYslygi" ItemsSource="{Binding}" ItemSelected="LvYslygi_ItemSelected">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <ViewCell.View>
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="*" />
+                                        </Grid.ColumnDefinitions>
+                                      
+                                        <Label Text="{Binding Name}" FontSize="Medium" Grid.Column="0" />
+                                        <Label Text="{Binding Prise}" FontSize="Medium" Grid.Column="1" />
+                                    </Grid>
+                                </ViewCell.View>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+            <StackLayout Grid.Row="2" Grid.Column="1">
+                
+                <Button x:Name="BtnLogin"  Grid.Row="2" HorizontalOptions="EndAndExpand"  Margin="5" WidthRequest="200" HeightRequest="40" Background="#FF488C51" TextColor="White" Text="Авторизоваться" Clicked="BtnLogin_Clicked"></Button>
+            </StackLayout>
+            <StackLayout Grid.Row="2" Grid.Column="0">
+
+                <Button x:Name="BtnReg"  Grid.Row="2" HorizontalOptions="StartAndExpand"  Margin="5" WidthRequest="200" HeightRequest="40" Background="#FF488C51" TextColor="White" Text="Зарегестрироваться" Clicked="BtnReg_Clicked"></Button>
+            </StackLayout>
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

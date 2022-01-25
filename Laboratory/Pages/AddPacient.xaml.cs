@@ -28,12 +28,15 @@ namespace Laboratory.Pages
         public AddPacient(int Seconds, Entities.Laborant CurrentLaborant)
         {
             InitializeComponent();
+            CurrentLaborantZakaz = CurrentLaborant;
             Time = TimeSpan.FromSeconds(Seconds);
             DispatcherTimer = new DispatcherTimer();
             DispatcherTimer.Interval = TimeSpan.FromSeconds(1);
             DispatcherTimer.Tick += DispatcherTimer_Tick;
             DispatcherTimer.Start();
             CboxNameStraxovaiya.ItemsSource = App.Context.InsuranceCompany.ToList();
+            CboxTypePolic.Items.Add("Обязательный");
+            CboxTypePolic.Items.Add("Добровольный");
 
         }
         private void DispatcherTimer_Tick(object sender, EventArgs e)
@@ -59,47 +62,48 @@ namespace Laboratory.Pages
 
         private void BtnAddPacient_Click(object sender, RoutedEventArgs e)
         {
-            try
-            {
-                var ErrorMessage = CheckErrors();
-                if (ErrorMessage.Length > 0)
-                {
-                    MessageBox.Show(ErrorMessage, "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
-                }
-                else { 
-                Entities.Pacient Pacient = new Entities.Pacient
-                {
-                    Name = TBoxName.Text,
-                    Sername = TBoxSername.Text,
-                    Patronomic = TBoxOtchestvo.Text,
-                    DateOfBirthday = DateOfBirthday.SelectedDate,
-                    SeriaPassport = Convert.ToInt32(TBoxsSeriaPasport.Text),
-                    NumberPasport = Convert.ToInt32(TBoxNumberPasport.Text),
-                    Login = null,
-                    Password=null,
-                    Phone=TBoxPhone.Text,
-                    Pochta=TBoxPochta.Text
+              try
+              {
+                  var ErrorMessage = CheckErrors();
+                  if (ErrorMessage.Length > 0)
+                  {
+                      MessageBox.Show(ErrorMessage, "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                  }
+                  else { 
+                  Entities.Pacient Pacient = new Entities.Pacient
+                  {
+                      Name = TBoxName.Text,
+                      Sername = TBoxSername.Text,
+                      Patronomic = TBoxOtchestvo.Text,
+                      DateOfBirthday = DateOfBirthday.SelectedDate,
+                      SeriaPassport = Convert.ToInt32(TBoxsSeriaPasport.Text),
+                      NumberPasport = Convert.ToInt32(TBoxNumberPasport.Text),
+                      Login = null,
+                      Password=null,
+                      Phone=TBoxPhone.Text,
+                      Pochta=TBoxPochta.Text
 
-                };
-                App.Context.Pacient.Add(Pacient);
-                App.Context.SaveChanges();
-                Entities.PacientInsuranse PacientInsuranse = new Entities.PacientInsuranse
-                {
-                    s5_InsuranceCompany=(Entities.InsuranceCompany)CboxNameStraxovaiya.SelectedItem,
-                    CodPacient =Convert.ToInt32(App.Context.Pacient.Max(p=>p.Id).ToString()),
-                    TypePolic=CboxTypePolic.Text,
-                    NumberPolic=Convert.ToInt32(TBoxNumberPolic.Text)
-                    };
-                App.Context.PacientInsuranse.Add(PacientInsuranse);
-                App.Context.SaveChanges();
-                MessageBox.Show("Пользователь успешно добавлен");
-                NavigationService.Navigate(new Pages.Zakaz(Convert.ToInt32(Time.TotalSeconds), CurrentLaborant));
-                }
-            }
-            catch
-            {
-                MessageBox.Show("Ошибка");
-            }
+                  };
+                  App.Context.Pacient.Add(Pacient);
+                  App.Context.SaveChanges();
+                  Entities.PacientInsuranse PacientInsuranse = new Entities.PacientInsuranse
+                  {
+                      s5_InsuranceCompany=(Entities.InsuranceCompany)CboxNameStraxovaiya.SelectedItem,
+                      CodPacient =Convert.ToInt32(App.Context.Pacient.Max(p=>p.Id).ToString()),
+                      TypePolic=CboxTypePolic.SelectedValue.ToString(),
+                      NumberPolic=Convert.ToInt32(TBoxNumberPolic.Text)
+                      };
+                  App.Context.PacientInsuranse.Add(PacientInsuranse);
+                  App.Context.SaveChanges();
+                  MessageBox.Show("Пользователь успешно добавлен");
+                  NavigationService.Navigate(new Pages.Zakaz(Convert.ToInt32(Time.TotalSeconds), CurrentLaborantZakaz));
+                  }
+              }
+              catch
+              {
+                  MessageBox.Show("Ошибка");
+              }
+            
 
         }
         

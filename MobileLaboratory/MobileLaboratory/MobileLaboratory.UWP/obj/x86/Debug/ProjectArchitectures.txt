@@ -1,0 +1,1 @@
+C:\Laboratory\MobileLaboratory\MobileLaboratory\MobileLaboratory.UWP\MobileLaboratory.UWP.csproj;x86

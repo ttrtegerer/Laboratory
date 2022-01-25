@@ -96,3 +96,7 @@ D:\Laboratory\Laboratory\bin\Debug\BouncyCastle.Crypto.dll
 D:\Laboratory\Laboratory\bin\Debug\itextsharp.dll
 D:\Laboratory\Laboratory\bin\Debug\itextsharp.xml
 D:\Laboratory\Laboratory\bin\Debug\ru\EntityFramework.SqlServer.resources.dll
+D:\Laboratory\Laboratory\obj\Debug\Pages\EditPacient.g.cs
+D:\Laboratory\Laboratory\obj\Debug\Pages\EditPacient.baml
+D:\Laboratory\Laboratory\obj\Debug\Pages\OtchetPage.g.cs
+D:\Laboratory\Laboratory\obj\Debug\Pages\OtchetPage.baml

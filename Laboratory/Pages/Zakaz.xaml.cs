@@ -144,6 +144,13 @@ namespace Laboratory.Pages
                     App.Context.ZakazYsluga.Add(ZakazYslugaSecond);
                     App.Context.SaveChanges();
                 }
+                    Entities.Stcet Stcet = new Entities.Stcet
+                    {
+                        CodByxgalter = 1,
+                        Cod_Zakaz=Convert.ToInt32(TBoxKod.Text)
+                       
+                    
+                    };
                 MessageBox.Show("Заказ добавлен");
                 ConvertToPDF();
 
