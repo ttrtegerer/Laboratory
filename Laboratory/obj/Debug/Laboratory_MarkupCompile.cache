@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-D:\Laboratory\Laboratory\obj\Debug\
+C:\Laboratory\Laboratory\obj\Debug\
 Laboratory
 none
 false
 DEBUG;TRACE
-D:\Laboratory\Laboratory\App.xaml
+C:\Laboratory\Laboratory\App.xaml
 101830802347
 2856189909
 312105242974
-21-1482866121
+261468684501
 MainWindow.xaml;Pages\AddPacient.xaml;Pages\AdministratorVhod.xaml;Pages\ByxgalterVhod.xaml;Pages\EditPacient.xaml;Pages\LaborantVhod.xaml;Pages\LoginPage.xaml;Pages\OtchetPage.xaml;Pages\PacientVhod.xaml;Pages\Zakaz.xaml;
 
 False

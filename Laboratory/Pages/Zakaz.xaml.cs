@@ -41,21 +41,12 @@ namespace Laboratory.Pages
         }
         private void DispatcherTimer_Tick(object sender, EventArgs e)
         {
-            if (Time == TimeSpan.Zero)
-            {
-                DispatcherTimer.Stop();
-                MessageBox.Show("Сеанс окончен войдите в учётную запись через минуту");
-                NavigationService.Navigate(new LoginPage());
-            }
-            else
-            {
+            
+            
                 Time = Time.Add(TimeSpan.FromSeconds(-1));
                 Timer.Text = Time.ToString("c");
-            }
-            if (Time == TimeSpan.FromSeconds(300))
-            {
-                MessageBox.Show("До конца сеанса осталось 5 минут");
-            }
+            
+          
         }
         private void OnComboboxTextChanged(object sender, RoutedEventArgs e)
         {

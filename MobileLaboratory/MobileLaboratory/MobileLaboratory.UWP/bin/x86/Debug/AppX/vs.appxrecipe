@@ -68,7 +68,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Laboratory\MobileLaboratory\MobileLaboratory\MobileLaboratory\bin\Debug\netstandard2.0\MobileLaboratory.dll">
       <PackagePath>MobileLaboratory.dll</PackagePath>
-      <Modified>2022-01-25T16:15:06.568</Modified>
+      <Modified>2022-01-27T11:26:31.286</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ivano\.nuget\packages\win2d.uwp\1.20.0\lib\uap10.0\Microsoft.Graphics.Canvas.winmd">
       <PackagePath>Microsoft.Graphics.Canvas.winmd</PackagePath>

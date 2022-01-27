@@ -1,0 +1,6 @@
+C:\Laboratory\LaboratoryAnalizatorTest\LaboratoryAnalizatorTest\bin\Debug\LaboratoryAnalizatorTest.dll
+C:\Laboratory\LaboratoryAnalizatorTest\LaboratoryAnalizatorTest\bin\Debug\LaboratoryAnalizatorTest.pdb
+C:\Laboratory\LaboratoryAnalizatorTest\LaboratoryAnalizatorTest\obj\Debug\LaboratoryAnalizatorTest.csproj.AssemblyReference.cache
+C:\Laboratory\LaboratoryAnalizatorTest\LaboratoryAnalizatorTest\obj\Debug\LaboratoryAnalizatorTest.csproj.CoreCompileInputs.cache
+C:\Laboratory\LaboratoryAnalizatorTest\LaboratoryAnalizatorTest\obj\Debug\LaboratoryAnalizatorTest.dll
+C:\Laboratory\LaboratoryAnalizatorTest\LaboratoryAnalizatorTest\obj\Debug\LaboratoryAnalizatorTest.pdb
